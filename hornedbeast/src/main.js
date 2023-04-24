@@ -1,11 +1,18 @@
 import HornedBeast from './HornedBeast'
+import Data from './data.json'
 
 function Main() {
     return (
-    <div>
-        <HornedBeast title="Bull" description="Angry red Bull" image="https://img.freepik.com/free-vector/vintage-strong-red-bull-head_225004-1579.jpg?w=2000" />
-        <HornedBeast title="Goat" description="Goat with long horns" image="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/contented-horned-goat-brenda-lawlor.jpg" />
-    </div>
+        <div>
+            {/* <HornedBeast title="Goat" description="Goat with long horns" image="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/contented-horned-goat-brenda-lawlor.jpg" /> */}
+            {Data.map((i) =>{
+              
+                //return <id title="" description="" image=""/>;
+                return <HornedBeast title={i.title} description={i.description} image={i.image_url} />
+            }
+            )};
+
+        </div>
     );
 
 }
